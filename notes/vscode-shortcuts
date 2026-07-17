@@ -1,0 +1,55 @@
+Useful VSCode Shortcuts
+
+
+**Navigation**
+- `Ctrl+P` (Cmd+P) — Quick open file by name
+- `Ctrl+Shift+P` (Cmd+Shift+P) — Command palette (access almost any command)
+- `Ctrl+G` — Go to line
+- `Ctrl+Tab` — Switch between open files
+- `Ctrl+Shift+O` — Go to symbol (function/variable) in file
+- `Ctrl+T` — Go to symbol across whole workspace
+- `Alt+Left / Alt+Right` (Ctrl+-  / Ctrl+Shift+-) — Navigate back/forward through cursor history
+
+**Editing**
+- `Ctrl+D` — Select next occurrence of current word (great for multi-cursor renaming)
+- `Ctrl+Shift+L` — Select all occurrences of current word
+- `Alt+Click` (Option+Click) — Add a new cursor at click point
+- `Ctrl+Alt+Up/Down` — Add cursor above/below
+- `Shift+Alt+Up/Down` (Shift+Option+Up/Down) — Copy line up/down
+- `Alt+Up/Down` (Option+Up/Down) — Move line up/down
+- `Ctrl+Shift+K` — Delete entire line
+- `Ctrl+/` — Toggle line comment
+- `Shift+Alt+A` — Toggle block comment
+- `Ctrl+Enter` — Insert line below without splitting current line
+- `Ctrl+Shift+Enter` — Insert line above
+- `Tab` / `Shift+Tab` — Indent / outdent selected line(s)
+
+**Search & Replace**
+- `Ctrl+F` — Find in file
+- `Ctrl+H` — Replace in file
+- `Ctrl+Shift+F` — Find across entire project
+- `Ctrl+Shift+H` — Replace across entire project
+
+**Code Understanding**
+- `F12` — Go to definition
+- `Alt+F12` — Peek definition (inline popup, no navigation)
+- `Shift+F12` — Find all references
+- `Ctrl+.` (Cmd+.) — Quick fix / show code actions
+- `F2` — Rename symbol (renames everywhere it's used)
+- `Ctrl+K Ctrl+I` — Show hover info (docs/type info) at cursor
+
+**Layout & Workflow**
+- `Ctrl+\`` (Cmd+\`) — Toggle integrated terminal
+- `Ctrl+B` — Toggle sidebar
+- `Ctrl+\` — Split editor
+- `Ctrl+1 / Ctrl+2 / Ctrl+3` — Jump to split pane 1/2/3
+- `Ctrl+J` — Toggle panel (terminal/output/problems area)
+- `Ctrl+K Z` — Zen mode (distraction-free)
+
+**Multi-file / Project**
+- `Ctrl+Shift+E` — Focus Explorer (file tree)
+- `Ctrl+Shift+G` — Focus Source Control (git)
+- `Ctrl+Shift+X` — Extensions panel
+- `Ctrl+Shift+M` — Problems panel (errors/warnings)
+
+A few that tend to save the most time day-to-day once they're muscle memory: `Ctrl+P` for jumping between files, `Ctrl+D` for quick multi-select edits, `F2` for safe renaming, and `Ctrl+.` for quick fixes. Want me to tailor this to a specific language/extension setup (e.g., anything specific to C/C++ or MATLAB tooling if that's relevant to your coursework)?
