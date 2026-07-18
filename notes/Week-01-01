@@ -1,0 +1,44 @@
+Role of Semicolons in JavaScript
+
+Semicolons are used to mark the end of statements in javascript.
+let variableOne = 35; // Declare a variable with value of 35 and the semicolon marks the end of this statement.
+
+If semicolons are omitted from JavaScript code they are added automatically by ASI(Automatic Semicolon Insertion).
+But ASI can not be trusted because it might cause unexpected behaviour or errors in the code or program.
+Therefore, it is always adviseable to add semicolons explicitly in your code after every statement to avoid such errors.
+
+
+Comments in programming are used to provide additional context for the code or leave notes for yourself and others.
+
+// I am a single line comment.
+
+/* I am a multi line comment
+  I can be written on multiple lines
+  and helpful for longer explanations
+  */
+
+JavaScript is a dynamically typed language, meaning you don't specify the data type when declaring a variable. This offers flexibility in the language at the expense of potential errors.
+In contrast, statically typed languages requires you to add the data type of the variable declaring and offers little errors in code.
+
+the typeOf operator is used to determine the data type of a variable
+//let num = 42;
+//console.log(typeof num); => "number"
+
+
+
+Bracket Notation
+// this allows you to access specific characters in a string
+/* let greeting = "Hello";
+  console.log(greeting[0]); => "H"
+  console.log(greeting[1]); => "e"   and so on.
+
+  greeting.length; => 5
+  this is used to get the number of characters in a string.
+
+  therefore, the last character in a string, string.length - 1.
+  for example,
+  console.log(greeting[greeting.length - 1]); => "o"
+*/
+
+
+
