@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 3, Week 1-day 3</title>
+</head>
+<body>
+  <script>
+    let letter = "A";
+    console.log(letter.charCodeAt(0)); // => 65
+
+    let char = String.fromCharCode(65);
+    console.log(char); // a
+
+    let phrase = "JavaScript is awesome";
+    let result1 = phrase.includes("awesome");
+    console.log(result1);
+
+    let text = "Hello, JavaScript world!";
+    let result2 = text.includes("JavaScript", 7);
+    console.log(result2);  // => true
+
+    let message = "JavaScript is fun";
+    let greeting = message.slice(0, 4);
+    console.log(greeting);  // Hello
+    let world = message.slice(5);
+    console.log(world);  // world!
+    let lastWord = message.slice(-4);
+    console.log(lastWord);  // fun!
+
+
+    message = "   Hello!   ";
+    console.log(message); // "   Hello!   "
+    let trimmedMessage = message.trim();
+    console.log(trimmedMessage);  // "Hello!"
+
+
+    text = "I love JavaScript!";
+    console.log(text); // "I love JavaScript!"
+    let newText = text.replace("JavaScript", "coding");
+    console.log(newText);  // "I love coding!"
+  </script>
+</body>
+</html>

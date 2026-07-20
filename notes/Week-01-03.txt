@@ -1,0 +1,73 @@
+ASCII (American Standard Code for Information Interchange)
+
+charCodeAt() : this is a method that let you get the ASCII code for a character in a string at a specific index.
+eg. let letter = "A";
+    console.log(letter.charCodeAt(0)); // => 65
+
+fromCharCode() : this method let you get a character by using the character's ASCII code.
+eg. let char = String.fromCharCode(65);
+    console.log(char); // a
+
+
+
+
+includes() method is the method used to check if a string constains a specific substring. eg,
+let phrase = "JavaScript is awesome";
+let result = pharase.includes("awesome");
+console.log(result); // => true
+
+it can also be used to check a substring starting at a specific index. And it also case sensitive.
+
+let text = "Hello, JavaScript world!";
+let result = text.includes("JavaScript", 7);
+console.log(result);  // => true
+
+
+
+slice() method allows you to extract a portion of a string and returns a new string, without modifying the original string. It takes two parameters: the starting index and the optional ending index.
+
+let message = "Hello, world!";
+let greeting = message.slice(0, 5);
+console.log(greeting);  // Hello
+
+If you omit the second parameter, slice() will extract everything from the start index to the end of the string. The end indices are not included in the extracted string.
+
+let message = "Hello, world!";
+let world = message.slice(7);
+console.log(world);  // world!
+
+
+
+
+toUpperCase() method converts all the characters to uppercase letters and returns a new string with all uppercase characters.
+toLowerCase() method converts all characters in a string to lowercase.
+
+
+
+ trim() method is the most commonly used way to remove whitespace from both the beginning and the end of a string
+let message = "   Hello!   ";
+console.log(message); // "   Hello!   "
+let trimmedMessage = message.trim();
+console.log(trimmedMessage);  // "Hello!"
+
+trimStart() removes whitespace from the beginning (or start) of the string.
+trimEnd() removes whitespace from the end of the string.
+
+
+
+The replace() method in JavaScript allows you to find a specified value (like a word or character) in a string and replace it with another value. By default, the replace() method will only replace the first occurrence of the searchValue. 
+
+let text = "I love JavaScript!";
+console.log(text); // "I love JavaScript!"
+let newText = text.replace("JavaScript", "coding");
+console.log(newText);  // "I love coding!"
+
+the replaceAll() method replaces all substrings for the selected substring in the string.
+
+
+
+The repeat() method is a built-in function in JavaScript that allows you to repeat a string a specified number of times.
+
+let word = "Hello!";
+let repeatedWord = word.repeat(3);
+console.log(repeatedWord);  // "Hello!Hello!Hello!"
