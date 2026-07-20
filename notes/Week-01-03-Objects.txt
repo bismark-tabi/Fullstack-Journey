@@ -1,0 +1,79 @@
+Objects in JavaScript
+
+
+In JavaScript, an object is a fundamental data structure that allows you to store and organize related data and functionality.
+Syntax:
+const exampleObject = {
+  propertyName: value,
+}
+
+There are two main ways to access object properties in JavaScript: dot notation and bracket notation.
+*Dot Notation, syntax:
+objectName.propertyName;
+
+*Bracket Notation, syntax;
+objectName["propertyName"];
+
+Bracket notation is more flexible than dot notation because it allows you to use property names that aren't valid JavaScript identifiers. For example, if you had a property name with spaces or that starts with a number, you'd need to use bracket notation
+Another advantage of bracket notation is that it allows you to use variables to access properties dynamically:
+const person = {
+  name: "Alice",
+  age: 30,
+  city: "Wonderland"
+};
+
+let propertyName = "city";
+console.log(person[propertyName]); // Wonderland
+
+
+
+Removing properties from Objects
+*The delete operator is used to remove properties from objects.
+const person = {
+  name: "Alice",
+  age: 30,
+  job: "Engineer"
+};
+
+delete person.job;
+console.log(person.job); // undefined
+
+*Another way is to use the destructuring method
+const person = {
+  name: "Bob",
+  age: 25,
+  job: "Designer",
+  city: "New York"
+};
+
+const { job, city, ...remainingProperties } = person;
+
+// { name: "Bob", age: 25 }
+console.log(remainingProperties);
+
+
+
+
+Checking if an object has a property.
+*hasOwnProperty() method: This method returns a boolean indicating whether the object has the specified property as its own property.
+const person = {
+  name: "Alice",
+  age: 30
+};
+
+console.log(person.hasOwnProperty("name")); // true
+console.log(person.hasOwnProperty("job")); // false
+
+*Object.hasOwn() is the modern, recommended way to check if an object has a property as its own (not inherited). Think of it as an upgraded, safer version of hasOwnProperty(). The syntax is Object.hasOwn(object, propertyName) — you pass the object as the first argument and the property name as the second.
+const person = {
+  name: "Alice",
+  age: 30
+};
+
+console.log(Object.hasOwn(person, "name")); // true
+console.log(Object.hasOwn(person, "job")); // false
+
+
+
+
+Object() Constructor
