@@ -1,0 +1,71 @@
+How to Add and Remove Elements from the Beginning and End of an Array
+
+
+The push() method is used to add one or more elements to the end of an array. The return value for the push() method is the new length of the array. 
+const fruits = ["apple", "banana"];
+const newLength = fruits.push("orange");
+console.log(newLength); // 3
+console.log(fruits); // ["apple", "banana", "orange"]
+
+
+The pop() method removes the last element from an array and returns that element. It also modifies the original array.
+let fruits = ["apple", "banana", "orange"];
+let lastFruit = fruits.pop();
+console.log(fruits); // ["apple", "banana"]
+console.log(lastFruit); // "orange"
+
+The unshift() method adds one or more elements to the beginning of an array and returns its new length.
+let numbers = [2, 3];
+let newLength = numbers.unshift(1);
+console.log(numbers); // [1, 2, 3]
+console.log(newLength); // 3
+
+
+The shift() method removes the first element from an array and returns that element.
+let colors = ["red", "green", "blue"];
+let firstColor = colors.shift();
+console.log(colors); // ["green", "blue"]
+console.log(firstColor); // "red"
+
+One dimensional Array
+let colors = ["red", "green", "blue"];
+
+Two dimensional Array
+
+
+
+
+
+Array Destructuring
+Array destructuring is a feature in JavaScript that allows you to extract values from arrays and assign them to variables in a more concise and readable way.
+let fruits = ["apple", "banana", "orange"];
+
+let [first, second, third] = fruits;
+
+console.log(first);  // "apple"
+console.log(second); // "banana"
+
+Array destructuring also allows you to skip elements you're not interested in by using commas.
+let colors = ["red", "green", "blue", "yellow"];
+let [firstColor, , thirdColor] = colors;
+
+console.log(firstColor); // "red"
+console.log(thirdColor); // "blue"
+
+Now, let's discuss the rest syntax, denoted by three dots (...). It allows you to capture the remaining elements of an array that haven’t been destructured into a new array. 
+let fruits = ["apple", "banana", "orange", "mango", "kiwi"];
+let [first, second, ...rest] = fruits;
+
+console.log(first);  // "apple"
+console.log(second); // "banana"
+console.log(rest);   // ["orange", "mango", "kiwi"]
+
+The split(), reverse() and join() methods
+let str = "hello";
+let charArray = str.split("");
+console.log(charArray); // ["h", "e", "l", "l", "o"]
+charArray.reverse();
+console.log(charArray); // ["o", "l", "l", "e", "h"]
+let reversedArray = charArray;
+let reversedString = reversedArray.join("");
+console.log(reversedString); // "olleh"

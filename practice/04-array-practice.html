@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 1, day-4 Array Practice</title>
+</head>
+<body>
+  <script>
+    //Using push() method to add elements to array
+    let fruits = ["apple", "banana"];
+    let newLength = fruits.push("orange");
+    console.log(newLength); // 3
+    console.log(fruits); // ["apple", "banana", "orange"]
+
+
+    //Using pop() method on array;
+    fruits = ["apple", "banana", "orange"];
+    let lastFruit = fruits.pop();
+    console.log(fruits); // ["apple", "banana"]
+    console.log(lastFruit); // "orange"
+
+    //Using unshift() method on array
+    let numbers = [2, 3];
+    newLength = numbers.unshift(1);
+    console.log(numbers); // [1, 2, 3]
+    console.log(newLength); // 3
+
+
+    //Using shift() method on array
+    let colors = ["red", "green", "blue"];
+    let firstColor = colors.shift();
+    console.log(colors); // ["green", "blue"]
+    console.log(firstColor); // "red"
+
+
+    //Array Destructuring
+    fruits = ["apple", "banana", "orange"];
+
+    let [first, second, third] = fruits;
+
+    console.log(first);  // "apple"
+    console.log(second); // "banana"
+
+    //Array destructuring also allows you to skip elements you're not interested in by using commas. 
+    colors = ["red", "green", "blue", "yellow"];
+    let [, ,secondColor , thirdColor] = colors;
+
+    console.log(secondColor); // "red"
+    console.log(thirdColor); // "blue"
+
+    //Using three dots, ... to capture the rest of array in Array Destructuring
+    fruits = ["apple", "banana", "orange", "mango", "kiwi"];
+    [first, second, ...rest] = fruits;
+
+    console.log(first);  // "apple"
+    console.log(second); // "banana"
+    console.log(rest);   // ["orange", "mango", "kiwi"]
+
+
+
+    //The split(), reverse() and join() methods
+    let str = "hello";
+    let charArray = str.split("");
+    console.log(charArray); // ["h", "e", "l", "l", "o"]
+    charArray.reverse();
+    console.log(charArray); // ["o", "l", "l", "e", "h"]
+    let reversedArray = charArray;
+    let reversedString = reversedArray.join("");
+    console.log(reversedString); // "olleh"
+  </script>
+</body>
+</html>
