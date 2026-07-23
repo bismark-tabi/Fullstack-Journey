@@ -69,3 +69,42 @@ console.log(charArray); // ["o", "l", "l", "e", "h"]
 let reversedArray = charArray;
 let reversedString = reversedArray.join("");
 console.log(reversedString); // "olleh"
+
+
+
+
+splice() method in array: It allows you to add or remove elements from any position in an array, including the middle. The return value for the splice() method will be an array of the items removed from the array. If nothing was removed, then an empty array will be returned.
+array.splice(startIndex, itemsToRemove, item1, item2);
+
+To create a copy of the original array without modifying it, we use the spread operator (...). The spread operator will create a shallow copy of the elements of the original array into a new array.
+let original = [1, 2, 3, 4, 5];
+let copy = [...original];
+copy.splice(2, 1, 6);
+
+console.log(original); // [1, 2, 3, 4, 5]
+console.log(copy);     // [1, 2, 6, 4, 5]
+
+
+
+
+The includes() method is particularly useful when you need to quickly verify the presence of an element in an array without needing to know its exact position.
+
+
+
+
+Shallow Copy of an Array
+
+The concat() method: This method creates a new array by merging two or more arrays. When used with a single array, it effectively creates a shallow copy.
+const originalArray = [1, 2, 3];
+const copyArray = [].concat(originalArray);
+
+console.log(copyArray); // [1, 2, 3]
+console.log(copyArray === originalArray); // false
+
+
+Another method to create a shallow copy is the slice() method. When called without arguments, slice() returns a shallow copy of the entire array.
+const originalArray = [1, 2, 3];
+const copyArray = originalArray.slice();
+
+console.log(copyArray); // [1, 2, 3]
+console.log(copyArray === originalArray); // false
