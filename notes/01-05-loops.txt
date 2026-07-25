@@ -1,0 +1,79 @@
+Loops in programming are used to repeat a block of code multiple times.
+basic syntax:
+for (initialization; condition; increment or decrement) {
+  // code block to be executed
+}
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+} // outputs a count from 0 to 4 in the console
+
+
+
+A for...of loop is used when you need to loop over values from an iterable. Examples of iterables would be arrays, and strings.
+basic syntax:
+for (variable of iterable) {
+  // code block to be executed
+}
+
+
+A for...in loop is best used when you need to loop over the properties of an object. This loop will iterate over all enumerable properties of an object, including inherited properties and non-numeric properties.
+basix syntax:
+for (variable in object) {
+  // code block to be executed
+}
+
+const fruit = {
+  name: 'apple',
+  color: 'red',
+  price: 0.99
+};
+
+for (const prop in fruit) {
+  console.log(fruit[prop]);
+}
+
+For nested properties
+const person = {
+  name: 'John',
+  age: 30,
+  address: {
+    street: '123 Main St',
+    city: 'Anytown',
+    state: 'CA'
+  }
+};
+
+function isObject(obj) {
+  return typeof obj === 'object' && !Array.isArray(obj) && obj !== null;
+}
+
+for (const prop in person) {
+  if (isObject(person[prop])) {
+    for (const nestedProp in person[prop]) {
+      console.log(person[prop][nestedProp]);
+    }
+  } else {
+    console.log(person[prop]);
+  }
+}
+
+
+
+
+
+A while loop will run a block of code as long as the condition is true. Here is the basic syntax for a while loop:
+while (condition) {
+  // code block to be executed
+}
+
+let counter = 0;
+while(counter < 5) {
+  console.log(counter);
+  counter++;
+}
+
+do...while loop: basic syntax:
+do {
+  // code block to be executed
+} while (condition);
