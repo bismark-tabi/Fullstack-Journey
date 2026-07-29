@@ -1,0 +1,127 @@
+The toString() method is a fundamental feature in JavaScript that converts a value to its string representation. 
+const num = 10;
+console.log(num.toString()); // "10"
+
+const num = 10;
+console.log(num.toString(2)); // "1010" the argument 2 converts the num to base two.
+
+const arr = [1, 2, 3];
+console.log(arr.toString()); // "1,2,3"
+
+const person = {
+  name: "John",
+  age: 30,
+  isStudent: true
+};
+
+console.log(person.toString()); // "[object Object]"
+
+
+
+
+The Number() constructor is used to create a number object.
+const myNum = new Number("34");
+console.log(typeof myNum); // "object" 
+
+When the Number() constructor is called as a function without the new keyword, then the return value will be the primitive number type. Most of the time you will be using the Number() constructor to convert other data types to the number data type.
+const myNum = Number("100");
+console.log(myNum); // 100
+console.log(typeof myNum); // number
+
+const num = Number("");
+console.log(num); // 0
+
+const num = Number("random");
+console.log(num); // NaN
+
+const boolTrue = Number(true);
+const boolFalse = Number(false);
+console.log(boolTrue); // 1
+console.log(boolFalse); // 0
+
+const undefinedNum = Number(undefined);
+const nullNum = Number(null);
+console.log(undefinedNum); // NaN
+console.log(nullNum); // 0
+
+const emptyArr = Number([]);
+const arrOneNum = Number([7]);
+const arrMultiNum = Number([7, 36, 12]);
+const arrStr = Number(["str1"]);
+const arrMultiStr = Number(["str1", "str2"]);
+console.log(emptyArr); // 0
+console.log(arrOneNum); // 7
+console.log(arrMultiNum); // NaN
+console.log(arrStr); // NaN
+console.log(arrMultiStr); // NaN
+
+When working with objects, the result is always NaN
+
+
+
+
+
+
+
+
+
+
+
+
+What Are Some Common Practices for Naming Variables and Functions?
+
+For boolean variables, it's a common practice to use prefixes such as is, has, or can. This immediately tells the reader that the variable is a boolean:
+
+For functions that return a boolean often called predicates, you can use the same is, has, or can prefixes:
+
+When you have functions that retrieve data it's common to start with the word get:
+
+When you have functions that set data it's common to start with the word set:
+
+For event handler functions, you might prefix with handle or suffix with handler:
+
+When naming iterator variables and loops, it's common to use single letters like i, j, or k, but for nested loops or more complex iterations more descriptive names can be helpful:
+
+For array names consider using plural nouns to indicate that the variable contains multiple items
+
+
+
+
+
+How Do You Get the Length for an Array, and How Can You Create an Empty Array of Fixed Length?
+
+It's possible to have arrays with empty slots. Empty slots are defined as slots with nothing in them. This is different than an array with the value of undefined. These types of arrays are known as sparse arrays. Here is an example:
+const sparseArray = [1, , , 4];
+console.log(sparseArray.length); // 4
+
+The Array() constructor can be used with the new keyword to create a new array. 
+const emptyArray = new Array(5);
+console.log(emptyArray.length); // 5
+console.log(emptyArray); // [ , , , , ]
+
+Another way to create an empty array of fixed length is to use the Array.from() method with a length argument. Unlike new Array(n), this method creates an array of the specified length where all elements exist and have a value of undefined
+const fixedLengthArray = Array.from({ length: 5 });
+console.log(fixedLengthArray.length); // 5
+console.log(fixedLengthArray); // [undefined, undefined, undefined, undefined, undefined]
+
+If you want to create an array of specific length and fill it with a default value, you can use the Array.fill() method:
+const filledArray = new Array(3).fill(0);
+console.log(filledArray); // [0, 0, 0]
+
+
+
+
+
+What Are Closures, and How Do They Work?
+
+Closures are one of the most powerful and often misunderstood features in JavaScript. At its core, a closure is a function that has access to variables in its outer enclosing lexical scope, even after the outer function has returned.
+function outerFunction(x) {
+    let y = 10;
+    function innerFunction(){
+        console.log(x + y);
+    }
+    return innerFunction;
+}
+
+let closure = outerFunction(5);
+console.log(closure()); // 15
