@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 200px;
+        }
+
+        .counter-display {
+            display: flex;
+            background-color: grey;
+            height: 100px;
+            width: 300px;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: gray;
+            border-radius: 10px;
+
+            height: 150px;
+            width: 300px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            background-color: rgb(48, 48, 48);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="counter-display">0</div>
+        <div class="buttons">
+            <button class="increase-button" 
+            onclick="
+                increaseValue();
+            ">Increase</button>
+            <button class="decrease-button" 
+            onclick="
+                decreaseValue();
+            ">Decrease</button>
+            <button class="reset-button"
+            onclick="
+                resetValue();
+            ">Reset</button>
+        </div>    
+    </main>
+
+   
+
+    <script>
+        let value = 0;
+        let displayEl = document.querySelector(".counter-display");
+
+
+        function increaseValue () {
+            value++;
+            displayEl.innerHTML = value;
+        }
+
+        function decreaseValue () {
+            if (value > 0) {
+               value--; 
+            } 
+            
+            displayEl.innerHTML = value;
+        }
+
+        function resetValue () {
+            value = 0;
+            displayEl.innerHTML = value;
+        }
+    </script>
+</body>
+</html>

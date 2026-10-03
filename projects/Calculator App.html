@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+</head>
+<body>
+    <script>
+const equipmentLedger = {
+  "1": { 
+    type: "PC", 
+    status: "CheckedOut", 
+    borrower: { 
+      name: "John Smith", 
+      email: "john@acme.org" 
+    }, 
+    dueDate: "11/30/2025" 
+  },
+  "2": { 
+    type: "Laptop", 
+    status: "CheckedIn", 
+    borrower: { 
+      name: "", 
+      email: "" 
+    }, 
+    dueDate: "" 
+  },
+  "3": { 
+    type: "Laptop", 
+    status: "CheckedOut", 
+    borrower: { 
+      name: "Jane Doe", 
+      email: "jane@acme.org" 
+    }, 
+    dueDate: "10/31/2025" 
+  },
+  "4": { 
+    type: "iPad", 
+    status: "CheckedIn", 
+    borrower: { 
+      name: "", 
+      email: "" 
+    }, 
+    dueDate: "" 
+  }
+};
+
+function checkoutDevice (ledger, assetTag, borrower) {
+  const updatedLedger = JSON.parse(JSON.stringify(ledger));
+
+  if (updatedLedger[assetTag] && updatedLedger[assetTag].status !== "CheckedOut") {
+    updatedLedger[assetTag].borrower = borrower;
+    updatedLedger[assetTag].status = "CheckedOut";
+
+    return {ledger: updatedLedger, message: `${updatedLedger[assetTag].borrower.name} borrowed ${updatedLedger[assetTag].type} from ${updatedLedger[assetTag]}` };
+  } 
+  else if (updatedLedger[assetTag] && updatedLedger[assetTag].status === "CheckedOut") {
+    return {ledger: updatedLedger, message: `Asset Tag ${assetTag} is already Checked Out by ${updatedLedger[assetTag].borrower.name}`};
+  }
+  
+  if (!updatedLedger[assetTag]) {
+    return {ledger: updatedLedger, message: `Asset Tag ${assetTag} does not exist`};
+  }
+}
+
+function checkinDevice(ledger, assetTag) {
+  const updatedLedger = JSON.parse(JSON.stringify(ledger));
+
+  if (updatedLedger[assetTag]) {
+    updatedLedger[assetTag].borrower.name = "";
+    updatedLedger[assetTag].borrower.email = "";
+    updatedLedger[assetTag].dueDate = "";
+
+    updatedLedger[assetTag].status = "CheckedIn";
+
+    return {ledger: updatedLedger, message: `${assetTag} has been checked in.`};
+  }
+
+
+  if (!updatedLedger[assetTag]) {
+    return {ledger: ledger, message: `${assetTag} was not found`};
+  };
+}
+
+function listOverdueDevices (ledger, today) {
+  const overdueDevices = [];
+
+  for (assetTag in ledger) {
+    const todayArr = today.split('/');
+    const dueDateArr = ledger[assetTag].dueDate.split('/');
+    let beforeToday = false;
+
+    if (Number(dueDateArr[2]) === Number(todayArr[2]) ) {
+      if (
+        (Number(dueDateArr[1]) < Number(todayArr[1])) ||
+        (Number(dueDateArr[0]) < Number(todayArr[0]))
+      ) {
+        beforeToday = true;
+      }
+    }
+    
+    if (Number(dueDateArr[2] )< Number(todayArr[2])) {
+      beforeToday = true;
+    }
+
+    if (ledger[assetTag].status === "CheckedOut" && beforeToday) {
+      overdueDevices.push(ledger[assetTag]);
+    }
+  }
+  
+  return overdueDevices;
+}
+console.log("12/30/2025".split("/"))
+console.log(listOverdueDevices(equipmentLedger,"12/30/2025"))
+
+function serializeLedger (ledger) {
+  return JSON.stringify(ledger);
+}
+
+function loadLedger (json) {
+  return JSON.parse(json);
+}
+    </script>
+</body>
+</html>
